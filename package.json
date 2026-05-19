@@ -1,0 +1,79 @@
+{
+  "name": "@dagstack/config",
+  "version": "0.5.1",
+  "description": "TypeScript / Node.js binding for dagstack/config-spec — YAML configuration with env interpolation, zod-based typed sections, runtime reconfigure.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist coverage *.tsbuildinfo",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "sync": "git submodule update --init --recursive && npm install",
+    "conformance": "vitest run tests/conformance.test.ts"
+  },
+  "keywords": [
+    "config",
+    "configuration",
+    "yaml",
+    "zod",
+    "dagstack",
+    "env-interpolation"
+  ],
+  "author": "Evgenii Demchenko <demchenkoev@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagstack/config-typescript.git"
+  },
+  "homepage": "https://github.com/dagstack/config-typescript",
+  "bugs": {
+    "url": "https://github.com/dagstack/config-typescript/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "yaml": "^2.6.0",
+    "zod": "^3.23.8"
+  },
+  "peerDependencies": {
+    "node-vault": "^0.10.0"
+  },
+  "peerDependenciesMeta": {
+    "node-vault": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "eslint": "^9.10.0",
+    "node-vault": "^0.10.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^2.0.0"
+  }
+}
